@@ -3,9 +3,23 @@
 import tornado.web
 from model.entity import Entity
 
-class MainHandler(tornado.web.RequestHandler):
+class Main(tornado.web.RequestHandler):
   def get(self):
-    #entity = Entity.get('the5fire\'s blog')
-    entity = 'aydon'
-    #self.render('index.html', entity = 'Aydon')
-    self.render('index.html', entity =  entity)
+    templates = 'list.html'
+    self.render('main.html',templates = templates)
+
+class Nmap_Result(tornado.web.RequestHandler):
+  def get(self):
+    templates = 'nmap_result.html'
+    self.render('main.html',templates = templates)
+
+class Dirb_Result(tornado.web.RequestHandler):
+  def get(self):
+    templates = 'dirb_result.html'
+    self.render('main.html',templates = templates)
+
+class SubDomainsBrute(tornado.web.RequestHandler):
+  def get(self):
+    templates = 'subdomainsbrute_result.html'
+    self.render('main.html',templates = templates)
+		
